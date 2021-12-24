@@ -8,6 +8,6 @@
         to improve my capabilities and take on more meainingful and satisfying work. I believe that humans are capable of so much
         that we leave unrealized and that if we break free of limiting paradigms we may be more than we thought was possible.
 
--Background: I was born and raised in a rural environment with little access to computer science education, but I have always been devoted
+-Background: I was born and raised in a rural environment with limited access to computer science education, but I have always been devoted
         to improving myself and gaining new knowledge and experiences. I have spent my adult life traveling the world
         to explore the human experience and expand my relationships with the lives and experiences of others.
