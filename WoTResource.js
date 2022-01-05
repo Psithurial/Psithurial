@@ -1,11 +1,10 @@
 class Resource{
-  constructor(name, products, producers, consumptionR, consumers, nomVal){
+  constructor(name, products, producers, consumptionR, consumers){
     this._name = name;
     this._products = products;
     this._producers = producers;
     this._consumptionR = consumptionR;
     this._consumers = consumers;
-    this._nomVal = nomVal;
     this._maxPrice = 0;
     this._minPrice = 0;
     this._maxSell = 0;
@@ -17,7 +16,6 @@ class Resource{
   get producers(){return this._producers};
   get consumptionR(){return this._consumptionR}
   get consumers(){return this._consumers};
-  get nomVal(){return this._nomVal};
   get maxPrice(){return this._maxPrice};
   get minPrice(){return this._minPrice};
   get maxSell(){return this._maxSell};
@@ -30,8 +28,8 @@ class Resource{
 }
 
 class ManufacturedGood extends Resource{
-  constructor(name, factors, products, producers, consumptionR, consumers, nomVal){
-    super(name, products, producers, consumptionR, consumers, nomVal);
+  constructor(name, factors, products, producers, consumptionR, consumers){
+    super(name, products, producers, consumptionR, consumers);
     this._factors = factors;
   }
   
@@ -72,7 +70,7 @@ Produced by: Cotton Farm, Cotton Plantation Colony
 Consumed by: Textile Mill
 Estimated value: $ 20
 */
-const cotton = new Resource('cotton', [],[cottonFarm, cottonPlantation], 0, [textileMill]);
+const cotton = new Resource('cotton', [fabric], [cottonFarm, cottonPlantation], 0, [textileMill]);
 
 /*
 Fish
@@ -90,7 +88,7 @@ Produced by: Gold Mine
 Consumed by: Gold Smelter
 Estimated value: $ 200
 */
-const goldOre = new Resource('goldOre', [], [goldMine], 0, [goldSmelter]);
+const goldOre = new Resource('goldOre', [gold], [goldMine], 0, [goldSmelter]);
                            
 /*
 Grain
@@ -99,7 +97,7 @@ Consumed by: Cities
 Estimated value: $ 10
 Can be replaced with: Fish
 */
-const grain = new Resource('grain', [], [grainFarm], (1/769), [cities]);
+const grain = new Resource('grain', [beer], [grainFarm], (1/769), [cities]);
                            
 /*
 Iron
@@ -107,7 +105,7 @@ Produced by: Iron Mine, Mining Camp Colony
 Consumed by: Blacksmith, Arsenal
 Estimated value: $ 25
 */
-const iron = new Resource('iron', [], [ironMine, MiningCamp], 0, [blacksmith, arsenal]);
+const iron = new Resource('iron', [arms, tools], [ironMine, MiningCamp], 0, [blacksmith, arsenal]);
                            
 /*
 Ivory
@@ -115,7 +113,7 @@ Produced by: Poachers' Den
 Consumed by: Jewelry Factory
 Estimated value: $ 300
 */
-const ivory = new Resource('ivory', [], [poachersDen], 0, [jewelryFactory]);
+const ivory = new Resource('ivory', [jewelry], [poachersDen], 0, [jewelryFactory]);
                            
 /*
 Opium
@@ -141,7 +139,7 @@ Consumed by: Cities, Distillery
 Estimated value: $ 20
 cons rate: 1/2500
 */
-const sugar = new Resource('sugar', [], [sugarFarm, sugarPlantation], (1/2500), [cities, distillery]);
+const sugar = new Resource('sugar', [rum], [sugarFarm, sugarPlantation], (1/2500), [cities, distillery]);
                            
 /*
 Tea
@@ -159,7 +157,7 @@ Produced by: Tobacco Farm, Tobacco Plantation Colony
 Consumed by: Cigar Factory
 Estimated value: $ 35
 */
-const tobacco = new Resource('tobacco', [], [tobaccoFarm, tobaccoPlantation], 0, [cigarFactory]);
+const tobacco = new Resource('tobacco', [cigars], [tobaccoFarm, tobaccoPlantation], 0, [cigarFactory]);
                            
 /*
 
@@ -172,7 +170,7 @@ Estimated value: $ 10
 Can be replaced with: Coal
 cons rate: 1/3333
 */
-const wood = new Resource('wood', [], [loggingCamp, lumberCamp], (1/3333), [cities, arsenal, blacksmith, paperMill, shipyard]);
+const wood = new Resource('wood', [arms, tools, paper], [loggingCamp, lumberCamp], (1/3333), [cities, arsenal, blacksmith, paperMill, shipyard]);
                            
 /*
 Manufactured Goods
@@ -253,7 +251,7 @@ Consumed by: Cities
 Estimated value: $ 1800
 Made with: 1x Gold, 1x Ivory
 */
-const jewelry = new ManufacturedGood('jewelry', [gold, ivory], [], [jewelryFactory], 0, [cities]);
+const jewelry = new ManufacturedGood('jewelry', [gold, ivory], [], [jewelryFactory], (1/500000), [cities]);
                            
 /*
 
@@ -264,7 +262,7 @@ Consumed by: Jewelry Factory
 Estimated value: $ 1000
 Made with: 4x Gold Ore
 */
-const gold = new ManufacturedGood('gold', [goldOre], [], [goldSmelter], 0, [jewelryFactory]);
+const gold = new ManufacturedGood('gold', [goldOre], [jewelry], [goldSmelter], 0, [jewelryFactory]);
                            
 /*
 
