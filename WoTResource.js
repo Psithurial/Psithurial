@@ -42,7 +42,9 @@ class ManufacturedGood extends Resource{
 Produced by: Coal Mine, Mining Camp Colony
 Consumed by: Cities
 Estimated value: $ 20
-Can be replaced with: Wood*/
+Can be replaced with: Wood
+cons rate: 1/33333
+*/
 const coal = new Resource('coal', [], 1, [coalMine, miningCamp], [cities]);
 
 
@@ -50,6 +52,7 @@ const coal = new Resource('coal', [], 1, [coalMine, miningCamp], [cities]);
 Produced by: Coffee Farm
 Consumed by: Cities
 Estimated value: $ 40
+cons rate: 1/20000
 
 Copper
 Produced by: Copper Mine
@@ -66,6 +69,7 @@ Produced by: Fishery
 Consumed by: Cities
 Estimated value: $ 15
 Can be replaced with: Grain
+cons rate: 1/3333
 
 Gold Ore
 Produced by: Gold Mine
@@ -103,11 +107,13 @@ Sugar
 Produced by: Sugar Farm, Sugar Plantation Colony
 Consumed by: Cities, Distillery
 Estimated value: $ 20
+cons rate: 1/2500
 
 Tea
 Produced by: Tea Plantation
 Consumed by: Cities
 Estimated value: $ 100
+cons rate: 1/10000
 
 
 Tobacco
@@ -123,6 +129,7 @@ Produced by: Logging Camp, Lumber Camp Colony
 Consumed by: Cities, Arsenal, Blacksmith, Paper Mill, Shipyard
 Estimated value: $ 10
 Can be replaced with: Coal
+cons rate: 1/3333
 
 Manufactured Goods
 
@@ -131,6 +138,7 @@ Produced by: Arsenal
 Consumed by: Barracks
 Estimated value: $ 250
 Made with: 2x Iron, 1x Wood
+
 */
 const arms = new ManufacturedGood('arms', [iron, iron, wood], [], 1, [arsenal], [barracks]);                          
 
@@ -140,6 +148,7 @@ Produced by: Brewery
 Consumed by: Cities
 Estimated value: $ 70
 Made with: 3x Grain
+cons rate: 1/25000
 
 
 
@@ -148,6 +157,7 @@ Produced by: Printing Press
 Consumed by: Cities
 Estimated value: $ 150
 Made with: 2x Paper
+cons rate: 1/50000
 
 
 
@@ -157,6 +167,7 @@ Consumed by: Cities
 Estimated value: $ 230
 Made with: 2x Tobacco, 1x Paper
 May be illegal in some countries
+cons rate: 1/20000
 
 
 Clothes
@@ -164,6 +175,7 @@ Produced by: Clothing Factory, Cotton Plantation Colony (level 3)
 Consumed by: Cities
 Estimated value: $ 150
 Made with: 1x Fabric
+cons rate: 1/10000
 
 
 
@@ -172,6 +184,7 @@ Produced by: Textile Mill, Cotton Plantation Colony (level 2+)
 Consumed by: Cities, Clothing Factory, Shipyard
 Estimated value: $ 80
 Made with: 2x Cotton
+cons rate: 1/10000
 
 
 
@@ -196,6 +209,7 @@ Produced by: Paper Mill, Lumber Camp Colony (level 2+)
 Consumed by: Cities, Cigar Factory, Printing Press
 Estimated value: $ 60
 Made with: 2x Wood
+cons rate: 1/50000
 
 
 
@@ -205,10 +219,12 @@ Consumed by: Cities
 Estimated value: $ 160
 Made with: 3x Sugar
 May be illegal in some countries
+cons rate: 1/20000
 
 
 Tools
 Produced by: Blacksmith, Mining Camp Colony (level 3)
 Consumed by: Cities
 Estimated value: $ 90
-Made with: 1x Iron, 1x Wood 
+Made with: 1x Iron, 1x Wood
+cons rate: 1/100000
