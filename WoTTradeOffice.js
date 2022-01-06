@@ -17,6 +17,6 @@ class TradeOffice{
     this._level += 1;
     this._upkeep += 10;
     this._cost += (this._level - 1) * 1000;
-    this._updateFreq = ((3 - this._level) * 3) + 1;
+    this._updateFreq = (((3 - this._level) + 1) * 2);
   }
 }
