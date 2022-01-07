@@ -4,8 +4,8 @@ class City{
     this._country = country;
     this._population = population;
     this._industries = industries;
-    this._warehouses = 0;
-    this._tradingStatus = 0;
+    this._warehouses = [];
+    this._tradeOffice = [];
     this._hasShipyard = false;
   }
 
@@ -14,11 +14,23 @@ class City{
   get population(){return this._population};
   get industries(){return this._industries};
   get warehouses(){return this._warehouses};
-  get tradingStatus(){return this._tradingStatus};
+  get tradeOffice(){return this._tradeOffice};
   get hasShipyard(){return this._hasShipyard};
+  
+  
+  //if the city has an industry that produces a resource, return the rate at which the industry(level) produces it
+  production(resource){
+    const checkForResource = (industry) =>{
+      if(idustry.factors
+  }
+    
+    const producingIndustries = this.industries.forEach(producesResource)
+    
+  }
 
-  set warehouses(num){this._warehouses = num};
-  set tradingStatus(num){this._tradingStatus = num};
+  
   set hasShipyard(bool){this._hasShipyard = bool};
+  
+  
 
 }
